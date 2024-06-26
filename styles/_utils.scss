@@ -1,0 +1,25 @@
+.container {
+	max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+	margin-inline: auto;
+	padding-inline: var(--container-padding-x);
+}
+
+.visually-hidden {
+	@include visually-hidden;
+}
+
+/* скрывает элемент на мобильных устройствах
+при определенном медиа-запросе */
+.hidden-mobile {
+	@include mobile {
+		display: none !important;
+	}
+}
+
+/* отобразит элемент на мобильных, но скроет
+на устройствах больше чем мобильные */
+.visible-mobile {
+	@include mobile-above {
+		display: none !important;
+	}
+}
